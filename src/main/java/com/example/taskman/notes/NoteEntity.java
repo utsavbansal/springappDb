@@ -1,5 +1,6 @@
 package com.example.taskman.notes;
 
+import com.example.taskman.tasks.TaskEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,4 +19,8 @@ public class NoteEntity {
     @NonNull
     @Column
     private String text;
+
+    @ManyToOne
+    @JoinColumn(name = "task_id")
+    private TaskEntity task;
 }
